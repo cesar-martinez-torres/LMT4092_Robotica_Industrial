@@ -32,5 +32,3 @@ s0Ts4=eval(s0Ts4)
 O=tr2rpy(s0Ts4,'deg')
 figure
 trplot(s0Ts4)
-
-
