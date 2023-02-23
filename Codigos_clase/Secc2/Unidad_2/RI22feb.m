@@ -14,7 +14,7 @@ R(3).offset=L4
 R(4)=Link([0 0 0 0 0])
 Robot_1=SerialLink(R,'name','Cilindrico')
 %Robot_1.teach
-Crad=[pi/4 5 5 pi/2]
+Crad=[pi/2 5 5 0]
 [cd,ALL]=Robot_1.fkine(Crad)
 O=tr2rpy(cd,'deg','xyz')
 lim=15
