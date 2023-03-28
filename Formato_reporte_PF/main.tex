@@ -1,0 +1,204 @@
+% Realizada por César Martínez cesar.martinez@udlap.mx
+%VERSION 2.0
+
+
+\documentclass[12pt]{article}  %tipo de documento y tamaño de letra normal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Paquetes basicos, pueden encontrar información especifica de cada uno de ellos en  (https://www.ctan.org/) %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[spanish]{babel} %Indica que escribiermos en español
+%\usepackage[english]{babel} %Indica que escribiermos en inglés
+%Comentar la línea del idiona que NO usarán en su reporte
+\usepackage[utf8]{inputenc} %Indica qué codificación se está usando ISO-8859-1(latin1)  o utf8  
+\usepackage{amsmath} % Comandos extras para matemáticas (cajas para ecuaciones,etc)
+\usepackage{amssymb} % Simbolos matematicos (por lo tanto)
+\usepackage{graphicx} % Incluir imágenes en LaTeX
+\usepackage{color} % Para colorear texto
+\usepackage{subfigure} % subfiguras
+\usepackage{enumerate} % enumerar
+\usepackage{commath} % funcionalidades extras para diferenciales, integrales,etc (\od, \dif, etc)
+\usepackage{cancel} % para cancelar expresiones (\cancelto{0}{x})
+\usepackage{float} %Podemos usar el especificador [H] en las figuras para que se queden donde queramos
+\usepackage{appendix} %Para crear apendices
+\usepackage{xcolor} %Definir colores personalizados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% PAQUETES CON OPCIONES ESPECIFICAS PRECARGADAS %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% Permitir agregar código, colocarlo en un rectángulo y  numerarlo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} %Sirve para pegar codigo fuente de programas
+\usepackage{caption} %Agregar titulos a los codigos
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+  \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\lstset{frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+\renewcommand{\lstlistingname}{Código}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Definir márgenes del documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \usepackage{anysize} % Para personalizar el ancho de  los márgenes
+\marginsize{2cm}{2cm}{2cm}{2cm} % Izquierda, derecha, arriba, abajo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Hipervinculos activos y a color %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[colorlinks=true,plainpages=true,citecolor=blue,linkcolor=black]{hyperref}
+\usepackage{hyperref} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Encabezado y pie de pagina %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize UDLAP} %encabezado izquierda
+\fancyhead[R]{\footnotesize CEM}   % encabezado derecha
+\fancyfoot[R]{\footnotesize \curso}  % Pie derecha
+\fancyfoot[C]{\thepage}  % centro
+\fancyfoot[L]{}  %izquierda
+\renewcommand{\footrulewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Carpeta donde se deben colocar las imagenes %%%%%%%%%%%%%%%%%%%%
+\graphicspath{{Imagenes/}} %Colocar aqui todas las imagenes del documento pueden estar en formato png, eps o jpg, se recomienda eps para mayor calidad.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Termina carga de paquetes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Modificar campos que aparecerán en portada %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\titulo{Reporte final}%titulo del documento
+\def\materia{Clave materia sección: } %Clave nombre de la materia y sección
+\def\curso{materia} %Nombre de la materia para footnote
+\def\fecha{Fecha de entrega} %En formato "dia" de "mes" de "año"
+\def\equipo {Número de equipo}%Verificar en blackboard el número asignado
+\def\ida{Id del estudiante 1} %Nombre y Id´s de todos los integrantes que hayan trabajado en el proyecto
+\def\esta{Nombre 1}
+\def\idb{Id del estudiante 2}
+\def\estb{Nombre 2}
+\def\idc{Id del estudiante 3}
+\def\estc{Nombre 3}
+\def\idd{Id del estudiante 4}
+\def\estd{Nombre 4}
+\def\ide{Id del estudiante 5} 
+\def\este{Nombre 5}%Copiar y pegar más líneas si su equipo tiene más de 5 integrantes, eliminar si está formado por menos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} %Inicia el documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%No es necesario modificar ninguna de las siguientes lineas, sólo si el número de estudiantes que conforman su equipo es menor o mayor a 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}														
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}						
+\thispagestyle{empty} 												
+\vspace*{-1.5cm}								
+\textsc{\huge Universidad de las Américas Puebla}\\[1.5cm]	
+\textsc{\LARGE Escuela de ingeniería}\\[1.5cm]	
+\textsc{\LARGE Departamento de computación, electrónica y mecatrónica}\\[1.5cm]												
+\includegraphics[width=150mm]{UDLAP}  									\vspace*{1cm}														\HRule \\[0.4cm]												
+{ \huge \bfseries \titulo}\\[0.4cm]	
+\HRule \\[1cm]														
+{ \Large \bfseries \materia}\\[1cm] 	
+{ \Large \bfseries Equipo \equipo}\\[1cm] 							
+\begin{flushleft} \Large											
+\ida \hspace{0.5cm}\esta \\
+\idb \hspace{0.5cm}\estb \\
+\idc \hspace{0.5cm}\estc \\
+\idd \hspace{0.5cm}\estd \\
+\ide \hspace{0.5cm}\este \\ %Copiar y pegar más líneas si su equipo tiene más de 5 integrantes, eliminar si está formado por menos
+\end{flushleft}														
+\vfill																
+\begin{center}													
+{\Large A \fecha, San Andrés Cholula, Puebla}						
+\end{center}												 		
+\end{center}							 								\newpage						
+%%%%%%%%%%%%%%%%%%%% TERMINA PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty} %Para no numerar la página del indice
+\tableofcontents %Comando que genera el índice
+\newpage %Se asegura que el documento inicie en la sigueinte pagina despues del índice
+\setcounter{page}{1} %Para comenzar a numerar las páginas desde este punto
+\section{Sección}
+\cite{gh1562} %Citar una referencia
+
+$\cancelto{0}{x}$ %Camcelar x y colocar un cero
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+    \item Item 4
+\end{itemize}
+
+\subsection{Subsección}
+\cite{Agarwal2019}
+\subsubsection{Sub-subsección}
+%% NOTA Aparecern warnings cada vez que se agregue código, ignorar por el momenoto, la siguiente versión del template corregirá estos errores
+
+% En este caso será necesario copiar y pegar todo el código 
+\begin{lstlisting}[language=Matlab, caption=Código de matlab]
+  %init_quad_reconfig_add.m %Ejecutar el programa de inicializacion
+%%
+clear all
+close all
+m=0.52%-0.0520; %masa dron
+g=9.81;
+tf=150;% Numero de muestras de la simulacion
+
+\end{lstlisting}
+
+%En este caso el código puede ser mandado a llamar desde un archivo
+\lstinputlisting[language=C,caption=Código desde archivo y en C]{codigos/fast.c}
+
+
+% En este caso será necesario copiar y pegar todo el código 
+\begin{lstlisting}[language=VHDL, caption=Código en VHDL]
+  library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_unsigned.all;
+entity Contador0_9 is
+    Port ( clock_100Mhz : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           Anode_Activate : out STD_LOGIC_VECTOR (3 downto 0);
+           LED_out : out STD_LOGIC_VECTOR (6 downto 0);
+           Led0: out STD_LOGIC:='0';
+           Led1: out std_logic:='0');-- COMMENT
+end Contador0_9;
+\end{lstlisting}
+
+% En este caso será necesario copiar y pegar todo el código 
+\begin{lstlisting}[language=Python, caption=Código en Python]
+  def hello(name):
+    print 'Hello', name
+ 
+if __name__=='__main__':
+    hello('Me')   #COMENTARIO 
+\end{lstlisting}
+
+
+\newpage %Termina la pagina y empieza una nueva
+\appendix % A partir de este comando, todas las secciones por venir serán parte del apéndice
+\section{Hoja de software}
+
+
+%%%%%%% Bibliografía %%%%%%%%
+\clearpage %Asegura que la bibliografía inicie en una nueva página
+\bibliographystyle{bst/IEEEtran} %Estilo de bibliografía
+\bibliography{bib/bibliografia} %Fuentes bibliográficas
+\addcontentsline{toc}{section}{Referencias}  %Agrega la bilbiogrfía al indice
+%%%%%%% Bibliografía %%%%%%%%      
+\end{document} %Termina el documento
