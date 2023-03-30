@@ -21,12 +21,11 @@ p1izq=inv(aAb)*noap
 p1izq=simplify(p1izq)
 p1der=bAc*cAd
 p1izq==p1der
-ec1=p1izq(3,4)==p1der(3,4)
 a=-py
 b=px
 q1_sol1=atan2(a,-b)
 q1_sol2=atan2(-a,b)
-T=Robot.fkine([pi pi/2 2.5])
+T=Robot.fkine([0 pi/2 3])
 pos=T.t
 px=pos(1)
 py=pos(2)
@@ -54,11 +53,6 @@ q3_sol1=eval(ec3)
 q1=-pi
 q2=pi/2
 q3_sol2=eval(ec3)
-%% Comprobación
-Q=[3 pi/2 5/2]
-T2=Robot.fkine(Q)
-error=T-T2
-figure
-Robot.plot(Q)
+
 
 
