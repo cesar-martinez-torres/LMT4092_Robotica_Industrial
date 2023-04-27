@@ -16,7 +16,7 @@ A(6)= Link([0 0 0 0 0]);
 Robot= SerialLink(A, 'name', 'Final'); %Unir articulaciones
 Robot.tool=transl(0,0,Le)
 figure
-Robot.teach
+%Robot.teach
 %% Cinematica directa simbólica
 syms q1 q2 q3 q4 q5 q6
 aTb=trotz(q1)*transl(0,0,L1)*transl(0,0,0)*trotx(-pi/2)% s0 a s1
@@ -28,15 +28,24 @@ fTg=trotz(q6)*transl(0,0,0)*transl(0,0,0)*trotx(0)% s5 a s6
 gTtcp=transl(0,0,Le)
 aTtcp=aTb*bTc*cTd*dTe*eTf*fTg*gTtcp
 % Cálculo de cinematica directa mediante toolbox
-T=Robot.fkine([pi 0 1.2 pi/4 pi/2 0])
+qz=[0 0 0 0 0 0]
+T=Robot.fkine(qz)
+figure
+Robot.plot(qz)
 RPY = tr2rpy(T, 'xyz','deg')
 %% Cinematica inversa
 ME=Robot.isspherical
 % Resolver la cinematica inversa mediante toolbox
-Q=Robot.ikine6s(T,'r','d','f')
-% Resolver la cinemtica inversa mediante desacoplo cinematico
-
-
+Q=Robot.ikine6s(T)
+% Trayectorias ecuaciones
+% x = f(t)
+t=0:0.1:45
+x=0.5*cos(t)
+y=0.5*sin(t)
+z=sin(5*t)+1
+figure
+plot3(x,y,z,'.')
+q1=Robot.ikine6s(T)
 
 
 

@@ -21,6 +21,15 @@ T=Robot.fkine(Q)
 rpy=tr2rpy(T,'xyz')
 %% Cinematica inversa ikine
 me=Robot.isspherical
-Q1=Robot.ikine6s(T)
+Q1=Robot.ikine6s(T,'d')
 T1=Robot.fkine(Q1)
 error=T-T1
+%% trayectorias
+t=0:0.01:3*pi
+x=sin(t)
+y=ones(size(t))*0.95
+z=ones(size(t))*-0.3326
+Qini=[0 pi 0 0 0 0]
+Tini=Robot.fkine(Qini)
+
+
