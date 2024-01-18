@@ -1,0 +1,25 @@
+%% 
+bP=[2;5]
+bPh=e2h(bP)%Euclidiano a Homogeneo
+bP=h2e(bPh)%Homogeneo a Euclidiano
+%% Ejercicio 1
+clear all
+close all
+cP1e=[6,2]'
+cP2e=[3,2]'
+cP3e=[6,4]'
+cP4e=[3,4]'
+cP5e=[4.5,4.5]'
+W=SE2()
+wTc=SE2(3,6,0,'deg')
+figure
+trplot2(W,'frame','W','color','b')
+grid on
+hold on
+trplot2(wTc,'frame','C','color','k')
+%% calcular puntos con respecto a W (Global de MATLAB)
+cP1h=[6,2,1]'
+cP2h=e2h(cP2e)
+cP3h=[6,4]'
+cP4h=[3,4]'
+cP5h=[4.5,4.5]'
