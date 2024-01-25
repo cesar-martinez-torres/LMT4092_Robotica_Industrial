@@ -3,7 +3,7 @@ bP=[2;5]
 bPh=e2h(bP)%Euclidiano a Homogeneo
 bP=h2e(bPh)%Homogeneo a Euclidiano
 %% Ejercicio 1
-clear all
+clear 
 close all
 cP1e=[6,2]'
 cP2e=[3,2]'

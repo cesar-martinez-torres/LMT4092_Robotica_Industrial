@@ -1,0 +1,6 @@
+%% Enero 25 3D transformations.
+r=rotx(15,'deg')
+t=[2,7,5]
+A=SE3(r,t)
+angulos=tr2rpy(A,'deg')
+angulos1=tr2e

@@ -14,7 +14,7 @@ h=fill([4,5,5,4],[4,4,5,5],'red');
     h3.FaceAlpha=0.3;
     trplot(I,'arrow','frame','Inicio')
     trplot(F,'arrow','frame','Fin','color','k')
-    tranimate(F)
+    tranimate(p1)
     
     xlim([0 5.5]);
     ylim([0 5]);
