@@ -11,8 +11,16 @@ W=SE3()
 r=rotx(15,'deg')
 t=[0.6,-0.2,-0.2]
 wTc=SE3(r,t)
+r=rotz(15,'deg')
+t=[0,0,0.8]
+wTi=SE3(r,t)
+wP=[0.45,-0.4,-0.45]' 
 figure
 trplot(W)
 grid on
 hold on
 trplot(wTc)
+trplot(wTi)
+%% Calcular punto
+cP=inv(wTc)*wP
+iP=inv(wTi)*wP
