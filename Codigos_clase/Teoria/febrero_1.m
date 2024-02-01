@@ -52,3 +52,20 @@ dTe=D1*D2 % Llegamos al PCH O TCP
 % Calcular la T de la base a la punta
 aTe=aTb*bTc*cTd*dTe
 aTe=simplify(aTe)
+aTe=aTe.T
+fx=aTe(1,4)
+fy=aTe(2,4)
+fz=aTe(3,4)
+% Las funciones restantes no se obtienen directamente de la matriz T
+%% Evaluar angulos
+q1d=10
+q2d=20
+q3d=30
+q4d=40
+q1=deg2rad(q1d)
+q2=deg2rad(q2d)
+q3=deg2rad(q3d)
+q4=deg2rad(q4d)
+aTe=eval(aTe)
+angulos=tr2rpy(aTe,'deg')
+
