@@ -22,7 +22,7 @@ trplot(S1, 'frame', 'S1', 'color', 'r')
 S2=SE2(10,0)
 tranimate(S2,'cleanup')
 trplot(S2, 'frame', 'S2', 'color', 'g')
-%pause()
+pause()
 %% q1 a 25 grados q2 a 0
 figure('name','q1=25,q2=0')
 aux1=SE2(0,0,25,'deg')
