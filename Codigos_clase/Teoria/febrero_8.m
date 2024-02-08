@@ -1,4 +1,6 @@
 %% DH
+clear
+close all
 a1=10;
 a2=10;
 a3=3;
