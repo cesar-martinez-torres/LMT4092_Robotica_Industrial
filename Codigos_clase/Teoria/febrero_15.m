@@ -1,4 +1,5 @@
 %% Robot cilindrico
+close all
 syms q1 q2 q3 q4
 l1=5
 l4=2.5
@@ -20,10 +21,10 @@ cilin=SerialLink(L,'name','Cilindrico')
 figure
 cilin.teach
 %%Evaluando "T" para obtener la cinem,atica directa
-q1=deg2rad(90)
-q2=2
-q3=3
-q4=deg2rad(20)
+q1=deg2rad(120)
+q2=3.8
+q3=3.9
+q4=deg2rad(150)
 T1=eval(T)
 angT1=tr2rpy(T1,'deg')
 %% fkine
