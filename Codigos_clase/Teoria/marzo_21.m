@@ -83,12 +83,6 @@ T=ant.fkine(Q) % Se supone conocida siempre..
 Qc=ant.ikine(T,'mask', [1 1 1 0 0 0])
 Qcg=[rad2deg(Qc(1)),rad2deg(Qc(2)), Qc(3)]
 % Validacion
-L1=3
-L(1)=Link([0 L1 0 pi/2 0])
-L(2)=Link([0 0 0 -pi/2 0])
-L(3)=Link([0 0 0 0 1])
-L(3).qlim=[0 3]
-ant1=SerialLink(L,'name','Diap')
 Tc=ant.fkine(Qc)
 error=T-Tc
 ant1=ant
