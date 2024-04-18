@@ -36,8 +36,7 @@ Tesq2=SE3(Tready.R,t)
 Qesq2=p560.ikine6s(Tesq2)% Si es alcanzable
 Tt3=ctraj(Tesq1,Tesq2,100)
 Qt3=p560.ikine6s(Tt3)
-Tt4=ctraj(Tesq2,Tready,100)
-Qt4=p560.ikine6s(Tt4)
-trayectoria=[Qt1;Qt2;Qt3;Qt4]
+
+trayectoria=[Qt1;Qt2;Qt3]
 figure
 p560.plot(trayectoria)
