@@ -1,0 +1,21 @@
+%% 
+clear
+close all
+mdl_puma560
+%p560.teach
+%% Mov 1 Home a ready (MJ)
+Home=qz
+Ready=[0 0 -pi/2 0 0 0]
+M=100
+q1=jtraj(Home(1),Ready(1),M)
+q2=jtraj(Home(2),Ready(2),M)
+q3=jtraj(Home(3),Ready(3),M)
+q4=jtraj(Home(4),Ready(4),M)
+q5=jtraj(Home(5),Ready(5),M)
+q6=jtraj(Home(6),Ready(6),M)
+Q1=[q1 q2 q3 q4 q5 q6]
+%% Mo
+%% Plotear
+tray=[Q1]
+figure
+p560.plot(tray,'trail','-')

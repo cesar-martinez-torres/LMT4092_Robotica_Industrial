@@ -40,5 +40,5 @@ Tt4=ctraj(Tesq2,Tready,100)
 Qt4=p560.ikine6s(Tt4)
 trayectoria=[Qt1;Qt2;Qt3;Qt4]
 figure
-p560.plot(trayectoria)
+p560.plot(trayectoria, 'trail', '-')
 TT=p560.fkine(trayectoria)
