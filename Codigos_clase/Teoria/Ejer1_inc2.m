@@ -18,4 +18,5 @@ h=fill([4,5,5,4],[4,4,5,5],'red');
     
     xlim([0 5.5]);
     ylim([0 5]);
+    grid on
     title('Ejercicio 2')

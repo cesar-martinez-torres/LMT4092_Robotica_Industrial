@@ -1,7 +1,0 @@
-%% Ejercicio 1.1 2 de febrero
-WtW=SE2(0,0,0)
-WtA=SE2(0,0,0)
-WtB=SE2(4,5,60,'deg')
-WtC=SE2(8,10,77,'deg')
-WtD=SE2(7,6,0,'deg')
-WtE=SE2(10,15,15.'')

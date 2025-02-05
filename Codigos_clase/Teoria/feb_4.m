@@ -39,6 +39,38 @@ plot_point(Wp4e,'*')
 plot_point(Wp5e,'*')
 plot_point(Wp6e,'*')
 grid on
+%% Inciso b
+AtW=inv(WtA)
+AtD=AtW*WtD
+BtE=(inv(WtB)*WtE)
+DtC=(inv(WtD)*WtC)
+EtB=(inv(WtE)*WtB)
+EtC=(inv(WtE)*WtC)
+%% Inciso c
+Cp1h=(inv(WtC.T))*Wp1h
+Cp2h=(inv(WtC.T))*Wp2h
+Cp3h=(inv(WtC.T))*Wp3h
+Cp4h=(inv(WtC.T))*Wp4h
+Cp5h=(inv(WtC.T))*Wp5h
+Cp6h=(inv(WtC.T))*Wp6h
+
+Bp1h=(inv(WtB.T))*Wp1h
+Bp2h=(inv(WtB.T))*Wp2h
+Bp3h=(inv(WtB.T))*Wp3h
+Bp4h=(inv(WtB.T))*Wp4h
+Bp5h=(inv(WtB.T))*Wp5h
+Bp6h=(inv(WtB.T))*Wp6h
+
+Dp4h=(inv(WtD.T))*Wp4h
+Ep6h=(inv(WtE.T))*Wp6h
+
+% Punto Dp1
+Dp1h=(inv(WtD.T))*Wp1h
+
+%% Inciso d
+Bp4h=((inv(WtB.T))*(WtD.T))*(Dp4h)
+
+
 
 
 
