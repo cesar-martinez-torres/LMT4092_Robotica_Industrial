@@ -2,7 +2,7 @@
 figure('Name','Ejercicio 2')
 I=SE2();  
 F=SE2(4.5,1,35,'deg');
-p1=SE2(1,0,0,'deg')
+p1=SE2(1,0,0,'deg');
 h=fill([4,5,5,4],[4,4,5,5],'red');
     h.FaceAlpha=0.3;
     hold on
