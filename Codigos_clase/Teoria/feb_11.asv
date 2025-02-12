@@ -1,0 +1,6 @@
+%% Ejercicio 1.2
+WtW=transl(0,0,0)
+WtA=transl(0,1,1)
+AtB=transl(-1,1,0)
+Btc1=transl(0,0,2)
+BtC2=trotz(-90,'deg')*troty
