@@ -71,6 +71,8 @@ hold on
 trplot(Tev,'frame','T','color','b')
 pause()
 %% Robot Phantom X
+clear
+close all
 syms q1 q2 q3 q4
 a0=95
 a1=42
@@ -79,3 +81,20 @@ a3=105
 a4=21
 T=(transl(0,0,a0))*(trotz(q1)*transl(0,0,a1))*(troty(q2)*transl(0,0,a2))*(troty(q3)*transl(0,0,a3))*(troty(q4)*transl(0,0,a4))
 T=simplify(T)
+% Midiendo q1, q2 y q3
+q1g=0
+q2g=0
+q3g=0
+q4g=0
+q1=deg2rad(q1g)
+q2=deg2rad(q2g)
+q3=deg2rad(q3g)
+q4=deg2rad(q4g)
+Tev=eval(T)
+rpy=tr2rpy(Tev)
+rpyg=rad2deg(rpy)
+W=SE3(0,0,0)
+figure
+trplot(W,'frame','W','color','k')
+hold on
+trplot(Tev,'frame','T','color','b')
