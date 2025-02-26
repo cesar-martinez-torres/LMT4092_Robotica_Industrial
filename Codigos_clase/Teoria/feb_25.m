@@ -13,7 +13,7 @@ aTbev=eval(aTb)
 rpy=tr2rpy(aTbev)
 rpyg=rad2deg(rpy)
 pause()
-%% Robot planar 2D 
+%% Robot planar 2GDL
 clear 
 close all
 syms q1 q2
@@ -36,3 +36,46 @@ Tev=eval(T)
 rpy=tr2rpy(Tev)
 rpyg=rad2deg(rpy)
 pause()
+%% Robot planar de 3GDL
+clear
+close all
+syms q1 q2 q3
+a1=1.5
+a2=1.5
+a3=1.5
+mr=trotz(q1)
+mt=transl(a1,0,0)
+aTb=mr*mt
+mr=trotz(q2)
+mt=transl(a2,0,0)
+bTc=mr*mt
+mr=trotz(q3)
+mt=transl(a3,0,0)
+cTd=mr*mt
+T=aTb*bTc*cTd
+T=simplify(T)
+% Midiendo q1, q2 y q3
+q1g=0
+q2g=0
+q3g=0
+q1=deg2rad(q1g)
+q2=deg2rad(q2g)
+q3=deg2rad(q3g)
+Tev=eval(T)
+rpy=tr2rpy(Tev)
+rpyg=rad2deg(rpy)
+W=SE3(0,0,0)
+figure
+trplot(W,'frame','W','color','k')
+hold on
+trplot(Tev,'frame','T','color','b')
+pause()
+%% Robot Phantom X
+syms q1 q2 q3 q4
+a0=95
+a1=42
+a2=105
+a3=105
+a4=21
+T=(transl(0,0,a0))*(trotz(q1)*transl(0,0,a1))*(troty(q2)*transl(0,0,a2))*(troty(q3)*transl(0,0,a3))*(troty(q4)*transl(0,0,a4))
+T=simplify(T)
