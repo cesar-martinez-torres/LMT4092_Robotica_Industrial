@@ -16,6 +16,10 @@ L(4)=Link([0 l4 0 0 0]);
 cilin= SerialLink(L, 'name', 'Cilindrico'); % Armar el robot uniendo los eslabones
 %figure
 %cilin.plot([0 0 0 0]) % Dibujar el robot en la posición inicial, con todas las articulaciones en 0. Agregar los valores de las articulaciones de acuerdo a la cantidad de grados de libertad del robot
+%figure
+%cilin.teach
+q=[pi/4 2.5 1.2 pi]
+T=cilin.fkine(q)
+rpy=tr2rpy(T)
 figure
-cilin.teach
-q=[0 0 0 0]
+cilin.plot(q)
