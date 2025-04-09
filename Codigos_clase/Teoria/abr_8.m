@@ -29,3 +29,22 @@ L(3).qlim=[0 q3m];
 diap37= SerialLink(L, 'name', 'DIAP 37'); % Armar el robot uniendo los eslabones
 figure
 diap37.teach
+%% Resolver cin inversa
+close all
+clear
+l1=5
+syms q1 q2 q3
+syms nx ox ax px ny oy ay py nz oz az pz
+noap=[nx ox ax px;ny oy ay py; nz oz az pz; 0 0 0 1]
+AtB=trotz(q1)*transl(0,0,0)*transl(l1,0,0)*trotx(pi/2)
+BtC=trotz(q2)*transl(0,0,0)*transl(0,0,0)*trotx(-pi/2)
+CtD=trotz(0)*transl(0,0,q3)*transl(0,0,0)*trotx(0)
+izq1=inv(AtB)*noap
+izq1=simplify(izq1)
+der1=BtC*CtD
+der1=simplify(der1)
+ec1x=izq1(1,4)==der1(1,4)
+ec1y=izq1(2,4)==der1(2,4)
+ec1z=izq1(3,4)==der1(3,4)
+
+
