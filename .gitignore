@@ -279,3 +279,4 @@ TSWLatexianTemp*
 *.asv
 
 codigos_clase/Soluciones/
+generarSolucionesRobot.m
