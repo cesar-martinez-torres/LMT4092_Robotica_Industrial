@@ -46,5 +46,27 @@ der1=simplify(der1)
 ec1x=izq1(1,4)==der1(1,4)
 ec1y=izq1(2,4)==der1(2,4)
 ec1z=izq1(3,4)==der1(3,4)
+a=-py
+b=px
+q1_sol1=atan2(a,-b)
+q1_sol2=atan2(-a,b)
+%% Para q2
+izq2=inv(BtC)*inv(AtB)*noap
+izq2=simplify(izq2)
+der2=CtD
+der2=simplify(der2)
+ec2x=izq2(1,4)==der2(1,4)
+ec2y=izq2(2,4)==der2(2,4)
+ec2z=izq2(3,4)==der2(3,4)
+syms k1 k2
+k1=px*cos(q1)
+k2=py*sin(q1)
+a1=k1+k2-5
+b1=pz
+q2_sol1=atan2(a1,-b1)
+q2_sol2=atan2(-a1,b1)
+%% para q3
+%Sustituir las soluciones de q1 y q2 en ec2z
+%% 
 
 
