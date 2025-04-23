@@ -31,7 +31,6 @@ figure
 diap37.teach
 %% Resolver cin inversa
 close all
-clear
 l1=5
 syms q1 q2 q3
 syms nx ox ax px ny oy ay py nz oz az pz
@@ -67,6 +66,28 @@ q2_sol1=atan2(a1,-b1)
 q2_sol2=atan2(-a1,b1)
 %% para q3
 %Sustituir las soluciones de q1 y q2 en ec2z
-%% 
+%% Encontrar [q1 q2 q3] para la matriz T
+Q=[pi pi/4 3]
+Tf=diap37.fkine(Q)
+Tf=Tf.T
+px=Tf(1,4)
+py=Tf(2,4)
+pz=Tf(3,4)
+% Evaluar las ecuaciones
+% Evaluando q1
+q1_sol1f=eval(q1_sol1)
+q1_sol2f=eval(q1_sol2)
+% Evaluando q2
+q1=q1_sol1f
+q1sol1_q2sol1=eval(q2_sol1)
+q1sol1_q2sol2=eval(q2_sol2)
+%%%%%%
+clear q1
+q1=q1_sol2f
+q1sol2_q2sol1=eval(q2_sol1)
+q1sol2_q2sol2=eval(q2_sol2)
+
+
+
 
 
