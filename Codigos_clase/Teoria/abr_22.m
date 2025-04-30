@@ -86,6 +86,10 @@ clear q1
 q1=q1_sol2f
 q1sol2_q2sol1=eval(q2_sol1)
 q1sol2_q2sol2=eval(q2_sol2)
+%%%
+q1=0
+q2=0.7854
+eval(ec2z)
 
 
 
