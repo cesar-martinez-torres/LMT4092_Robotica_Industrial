@@ -19,7 +19,7 @@ L(6) = Link([0 0 0 0]);
 puma = SerialLink(L, 'name', 'Puma560');
 
 
-n = 10; % Número de posiciones aleatorias a generar
+n = 5000; % Número de posiciones aleatorias a generar
 
 % Rangos de ángulos articulares del robot Puma 560
 q_min = puma.qlim(:, 1);
@@ -37,8 +37,9 @@ disp('Coordenadas generadas:');
 disp(q_rand);
 
 % Visualizar el espacio de trabajo
+Q=[0 0 0 0 0 0]
 figure;
-puma.plot(q_rand);
+puma.plot(Q);
 hold on;
 
 % Obtener las coordenadas x, y, z de las posiciones aleatorias
