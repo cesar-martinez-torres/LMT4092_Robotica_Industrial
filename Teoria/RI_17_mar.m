@@ -14,4 +14,5 @@ figure
 diap28.plot([pi/2 0.5 1 0])
 Q=[pi/2 0.5 1 0];
 aTe=diap28.fkine(Q)
+rpy=tr2rpy(aTe)
 [T,ALL] = diap28.fkine(Q) 
