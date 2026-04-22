@@ -37,3 +37,5 @@ q1sol2=atan2(-raiz,c)+atan2(b,a)
 izq2=inv(bTc)*izq1
 izq2=simplify(izq2)
 der2=cTd*dTe
+ec2=izq2(1,4)==der2(1,4)
+ec3=izq2(2,4)==der2(2,4)
